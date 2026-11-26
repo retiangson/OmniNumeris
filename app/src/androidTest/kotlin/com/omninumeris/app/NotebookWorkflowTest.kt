@@ -11,6 +11,7 @@ import android.os.SystemClock
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.InputDevice
 import android.view.FrameMetrics
+import android.view.WindowManager
 import android.view.MotionEvent
 import androidx.test.platform.app.InstrumentationRegistry
 import com.omninumeris.application.NotebookRead
@@ -67,6 +68,7 @@ class NotebookWorkflowTest {
             Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK),
         )
         val worker = HandlerThread("NotebookFrameMetrics").apply { start() }
+        instrumentation.runOnMainSync { activity.window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) }
         val frames = mutableListOf<Long>()
         var droppedReports = 0
         var listening = false
@@ -418,20 +420,23 @@ class NotebookWorkflowTest {
     private fun openNotebook(title: String) {
         text("Notebooks")
         repeat(30) {
-            val nodes = instrumentation.uiAutomation.rootInActiveWindow?.let(::descendants).orEmpty()
+            val nodes = await("notebook list content for $title") { entries ->
+                entries.any { button(it, title)?.isVisibleToUser == true || it.canScroll() }
+            }
             val button = nodes.firstNotNullOfOrNull { button(it, title) }
             if (button != null && button.isVisibleToUser) {
                 assertTrue(button.performAction(AccessibilityNodeInfo.ACTION_CLICK))
                 return
             }
-            val list = nodes.firstOrNull { node ->
-                node.actionList.any { it.id == AccessibilityNodeInfo.ACTION_SCROLL_FORWARD }
-            } ?: error("Could not find notebook $title in the list")
+            val list = nodes.firstOrNull { it.canScroll() } ?: error("Could not find notebook $title in the list")
             assertTrue(list.performAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD))
             SystemClock.sleep(200)
         }
         error("Could not scroll to notebook $title")
     }
+
+    private fun AccessibilityNodeInfo.canScroll() =
+        isVisibleToUser && actionList.any { it.id == AccessibilityNodeInfo.ACTION_SCROLL_FORWARD }
 
     private fun enter(value: String) {
         val field = await("editable field") { nodes -> nodes.any { it.isEditable && it.isVisibleToUser } }

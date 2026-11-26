@@ -357,7 +357,8 @@ class MathEditorTest {
     }
 
     private fun search(node: AccessibilityNodeInfo, predicate: (AccessibilityNodeInfo) -> Boolean): AccessibilityNodeInfo? {
-        if (node.packageName?.toString() == "com.omninumeris.app" && predicate(node)) return node
+        val targetPackage = InstrumentationRegistry.getInstrumentation().targetContext.packageName
+        if (node.packageName?.toString() == targetPackage && predicate(node)) return node
         for (index in 0 until node.childCount) {
             val match = node.getChild(index)?.let { search(it, predicate) }
             if (match != null) return match
