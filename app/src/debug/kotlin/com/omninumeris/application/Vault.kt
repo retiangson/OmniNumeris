@@ -4,7 +4,7 @@ import com.omninumeris.domain.calculator.CalculationResult
 import kotlinx.coroutines.flow.StateFlow
 
 /**
- * Vault interface for secure storage and access control
+ * Interface used by the debug vault experiment.
  */
 interface Vault {
     /**

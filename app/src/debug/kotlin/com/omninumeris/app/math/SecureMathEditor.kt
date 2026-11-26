@@ -30,7 +30,7 @@ import com.omninumeris.domain.calculator.CalculationResult
 import com.omninumeris.domain.calculator.CalculatorUseCase
 
 /**
- * Secure math editor component that integrates with protected storage
+ * Editor for the debug vault experiment.
  */
 @Composable
 fun SecureMathEditor(
@@ -63,7 +63,7 @@ fun SecureMathEditor(
                 label = { Text("Enter math expression") },
                 modifier = Modifier.fillMaxWidth(),
                 keyboardOptions = KeyboardOptions(
-                    autoCorrect = false
+                    autoCorrectEnabled = false
                 ),
                 visualTransformation = VisualTransformation.None,
                 singleLine = false
@@ -100,7 +100,7 @@ fun SecureMathEditor(
             }
 
             // Display results if available
-            when (val currentState = state.value) {
+            when (val currentState = state) {
                 is SecureMathInputState.Success -> {
                     Box(
                         modifier = Modifier

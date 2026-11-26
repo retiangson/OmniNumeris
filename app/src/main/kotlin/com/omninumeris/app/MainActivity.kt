@@ -22,13 +22,10 @@ import com.omninumeris.app.calculator.CalculatorViewModel
 import com.omninumeris.app.math.MathEditorScreen
 import com.omninumeris.app.math.MathInputViewModel
 import com.omninumeris.app.math.MathReviewDialogs
-import com.omninumeris.app.math.SecureMathInputViewModel
-import com.omninumeris.app.math.SecureMathEditor
 import com.omninumeris.app.notebook.NotebookScreen
 import com.omninumeris.app.notebook.NotebookMathInsertion
 import com.omninumeris.app.notebook.NotebookViewModel
 import com.omninumeris.application.LinkedMathSolutionHistory
-import com.omninumeris.application.Vault
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -36,10 +33,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject lateinit var notebookInkHistory: LinkedMathSolutionHistory
-    @Inject lateinit var vault: Vault
     private val workspace: WorkspaceViewModel by viewModels()
     private val calculator: CalculatorViewModel by viewModels()
-    private val mathInput: SecureMathInputViewModel by viewModels()
+    private val mathInput: MathInputViewModel by viewModels()
     private val notebook: NotebookViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,11 +89,24 @@ class MainActivity : ComponentActivity() {
                     } else if (canvasOpen) {
                         WorkspaceCanvas(onBack = { canvasOpen = false }, onOpenCalculator = openCalculator)
                     } else if (showingEditor) {
-                        // Use secure math editor for enhanced security
-                        SecureMathEditor(
-                            viewModel = mathInput,
-                            onBack = { closeEditor() },
+                        MathEditorScreen(
+                            value = if (notebookState == null) draft else notebookDraft,
+                            onChange = { if (notebookState == null) draft = it else notebookDraft = it },
+                            onEdit = { transform ->
+                                if (notebookState == null) draft = transform(draft) else notebookDraft = transform(notebookDraft)
+                            },
+                            previewTyped = mathInput::previewTyped,
+                            availableSources = mathInput.availableSources,
+                            onReview = {
+                                calculatorOpenedFromReview = false
+                                mathInput.beginTypedReview(if (notebookState == null) draft.text else notebookDraft.text)
+                            },
+                            onHistory = {
+                                calculatorOpenedFromReview = false
+                                mathInput.showSolutionHistory()
+                            },
                             onOpenCalculator = openCalculator,
+                            onBack = { closeEditor() },
                         )
                         if (!calculatorOpenedFromReview || !calculatorExpanded) {
                             MathReviewDialogs(

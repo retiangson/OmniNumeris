@@ -1,13 +1,13 @@
-# Deployment and Monitoring Epic (EP-DEP)
+# Deployment and Monitoring Prototype (EP-DEP)
 
 ## Overview
-The Deployment and Monitoring epic implements comprehensive deployment automation, monitoring, and status tracking capabilities for the OmniNumeris application. This epic ensures reliable deployment processes and provides visibility into application performance and health.
+The debug prototype exercises deployment state transitions, local event logging and status reports. Build, deployment and monitoring upload are simulated. The production release does not include these prototypes. The JavaScript script prints demonstration messages and does not execute or verify the Kotlin code.
 
-## Stories Implemented
+## Prototype coverage
 
 ### OW-1001 - Implement deployment automation framework
 - Created `DeploymentAutomation` class with automated deployment process handling
-- Implemented build and deployment steps
+- Simulated build and deployment steps
 - Added deployment status tracking
 - Included version management and configuration support
 
@@ -26,7 +26,7 @@ The Deployment and Monitoring epic implements comprehensive deployment automatio
 ## Key Components
 
 ### Deployment Automation (`DeploymentAutomation.kt`)
-- Handles automated build and deployment processes
+- Simulates a build and deployment sequence
 - Manages deployment status lifecycle (PENDING, BUILDING, DEPLOYING, DEPLOYED, FAILED)
 - Provides configuration management for different environments
 - Supports version tracking and build information

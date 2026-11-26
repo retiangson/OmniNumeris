@@ -15,6 +15,6 @@ interface CalculatorUseCase {
  */
 class DefaultCalculatorUseCase : CalculatorUseCase {
     override fun calculate(expression: String): CalculationResult {
-        return Calculator.calculate(Calculator.Calculation.Standard(expression))
+        return Calculator.calculate(Calculation.Standard(expression))
     }
 }

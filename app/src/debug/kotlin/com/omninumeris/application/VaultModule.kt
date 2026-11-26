@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object VaultModule {
+internal object VaultModule {
 
     @Provides
     @Singleton

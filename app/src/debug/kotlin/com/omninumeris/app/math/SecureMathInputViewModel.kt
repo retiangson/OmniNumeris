@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 /**
- * Secure math input view model that integrates with protected storage and vault system
+ * Input view model for the debug vault experiment.
  */
 class SecureMathInputViewModel(
     private val calculator: CalculatorUseCase = DefaultCalculatorUseCase(),

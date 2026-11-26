@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 /**
- * Secure vault implementation for protected storage access
+ * Debug experiment with no credential validation or persistent storage.
  */
 class SecureVault : Vault {
     private val _state = MutableStateFlow<VaultState>(VaultState.Uninitialized)
