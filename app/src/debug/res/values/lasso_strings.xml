@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="canvas_lasso">Lasso math</string>
+    <string name="canvas_lasso_help">Draw a loop around the ink you want to select. Pinch to zoom or pan.</string>
+    <string name="canvas_lasso_pen_help">Use your stylus to draw a loop around the ink you want to select.</string>
+    <string name="canvas_lasso_working">Preparing selection preview…</string>
+    <string name="canvas_lasso_preview">Selection preview</string>
+    <string name="canvas_lasso_empty">No ink in this selection.</string>
+    <string name="canvas_lasso_complex">Draw a smaller or simpler loop.</string>
+    <string name="canvas_lasso_all_excluded">All strokes are excluded.</string>
+    <string name="canvas_lasso_image">Preview of the selected ink</string>
+    <string name="canvas_lasso_recognition_unavailable">Recognition is unavailable in this build.</string>
+    <string name="canvas_lasso_stroke">Stroke %1$d</string>
+    <string name="canvas_lasso_redraw">Close</string>
+</resources>

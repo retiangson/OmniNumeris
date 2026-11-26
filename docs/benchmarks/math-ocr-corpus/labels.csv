@@ -1,0 +1,10 @@
+id,file,source,canonical_expression,structure
+P01,P01.png,printed,2+3*4,inline arithmetic
+P02,P02.png,printed,1/2+1/3,stacked fractions
+P03,P03.png,printed,sqrt(9/16),square root and fraction
+P04,P04.png,printed,2^3,superscript power
+P05,P05.png,printed,2*x+3=x-5,linear equation
+H01,H01.png,synthetic pen,2+3*4,inline arithmetic
+H02,H02.png,synthetic pen,1/2+1/3,inline fractions
+H03,H03.png,synthetic pen,x-1=2,linear equation
+H04,H04.png,synthetic pen,2^3,caret power

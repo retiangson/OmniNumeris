@@ -1,0 +1,9 @@
+{"id":"P01","source":"printed","expected":"2+3*4","raw":"2+3x4","normalized":"2+3x4","exact":false,"stable":true,"firstMs":10.1075,"warmMedianMs":7.415}
+{"id":"P02","source":"printed","expected":"1\/2+1\/3","raw":"14d\n2° 3","normalized":"14d2°3","exact":false,"stable":true,"firstMs":10.2843,"warmMedianMs":10.5972}
+{"id":"P03","source":"printed","expected":"sqrt(9\/16)","raw":"V(9\/16)","normalized":"V(9\/16)","exact":false,"stable":true,"firstMs":6.6587,"warmMedianMs":5.9262}
+{"id":"P04","source":"printed","expected":"2^3","raw":"3\n2","normalized":"32","exact":false,"stable":true,"firstMs":2.7526,"warmMedianMs":3.0331}
+{"id":"P05","source":"printed","expected":"2*x+3=x-5","raw":"2Xx+3=x-5","normalized":"2Xx+3=x-5","exact":false,"stable":true,"firstMs":13.0748,"warmMedianMs":10.6242}
+{"id":"H01","source":"synthetic pen","expected":"2+3*4","raw":"2+ 3x4","normalized":"2+3x4","exact":false,"stable":true,"firstMs":5.8138,"warmMedianMs":6.6207}
+{"id":"H02","source":"synthetic pen","expected":"1\/2+1\/3","raw":"1\/2+1\/3","normalized":"1\/2+1\/3","exact":true,"stable":true,"firstMs":8.4017,"warmMedianMs":10.1417}
+{"id":"H03","source":"synthetic pen","expected":"x-1=2","raw":"X-1=2","normalized":"X-1=2","exact":false,"stable":true,"firstMs":7.702,"warmMedianMs":5.4352}
+{"id":"H04","source":"synthetic pen","expected":"2^3","raw":"23","normalized":"23","exact":false,"stable":true,"firstMs":3.8028,"warmMedianMs":3.3629}

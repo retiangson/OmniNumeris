@@ -1,0 +1,11 @@
+/.gradle/
+/.gradle-local/
+/.idea/
+/.kotlin/
+/.vs/
+**/build/
+**/.cxx/
+/tools/benchmarks/math-ocr-baseline/bin/
+/tools/benchmarks/math-ocr-baseline/obj/
+*.iml
+/local.properties

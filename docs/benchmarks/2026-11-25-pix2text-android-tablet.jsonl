@@ -1,0 +1,9 @@
+{"id":"P01","source":"printed","expected":"2+3*4","latex":"2 + 3 \\times 4","complete":true,"stable":true,"warmMedianMs":373.334635,"exact":true}
+{"id":"P02","source":"printed","expected":"1/2+1/3","latex":"\\frac { 1 } { 2 } ~ + ~ \\frac { 1 } { 3 }","complete":true,"stable":true,"warmMedianMs":587.955,"exact":true}
+{"id":"P03","source":"printed","expected":"sqrt(9/16)","latex":"\\sqrt { ( 9 / 1 6 ) }","complete":true,"stable":true,"warmMedianMs":462.581406,"exact":true}
+{"id":"P04","source":"printed","expected":"2^3","latex":"2 ^ { 3 }","complete":true,"stable":true,"warmMedianMs":388.991979,"exact":true}
+{"id":"P05","source":"printed","expected":"2*x+3=x-5","latex":"2 \\times \\mathrm { x } + 3 = \\mathrm { x } - 5","complete":true,"stable":true,"warmMedianMs":609.910468,"exact":true}
+{"id":"H01","source":"synthetic pen","expected":"2+3*4","latex":"2 + 3 \\times 4","complete":true,"stable":true,"warmMedianMs":418.110729,"exact":true}
+{"id":"H02","source":"synthetic pen","expected":"1/2+1/3","latex":"1 / 2 + 1 / 3","complete":true,"stable":true,"warmMedianMs":434.322395,"exact":true}
+{"id":"H03","source":"synthetic pen","expected":"x-1=2","latex":"x \\! - \\! { \\bf 1 = } 2","complete":true,"stable":true,"warmMedianMs":504.666666,"exact":true}
+{"id":"H04","source":"synthetic pen","expected":"2^3","latex":"2 \\sp { \\sb n \\sb n \\sb n \\sb n \\line a \\sb n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n \\llap n","complete":false,"stable":true,"warmMedianMs":1658.630468,"exact":false}

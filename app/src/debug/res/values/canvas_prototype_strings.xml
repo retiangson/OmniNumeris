@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="canvas_prototype">Canvas prototype</string>
+    <string name="canvas_back">Back</string>
+    <string name="canvas_input_help">Draw with a pen or finger. Use two fingers to pan and zoom.</string>
+    <string name="canvas_stylus_help">Write with your stylus. Turn off Stylus only to use touch.</string>
+    <string name="canvas_tip_fine">Fine</string>
+    <string name="canvas_tip_medium">Medium</string>
+    <string name="canvas_tip_bold">Bold</string>
+    <string name="canvas_eraser">Eraser</string>
+    <string name="canvas_eraser_help">Touch a stroke to erase it. Undo restores the last edit.</string>
+    <string name="canvas_stylus_eraser_help">Tap a stroke with your stylus to erase it. Undo restores the last edit.</string>
+    <string name="canvas_stylus_only">Stylus only</string>
+    <string name="canvas_undo">Undo</string>
+    <string name="canvas_editing">Updating canvas…</string>
+    <string name="canvas_edit_failed">The canvas edit could not be saved. Try again.</string>
+    <string name="canvas_accessibility_label">Drawing canvas</string>
+    <string name="canvas_loading">Loading strokes…</string>
+    <string name="canvas_committed">Saved strokes: %1$d</string>
+    <string name="canvas_recover_failed">The canvas journal could not be opened.</string>
+    <string name="canvas_recovery_partial">Saved strokes: %1$d. Unreadable records: %2$d.</string>
+    <string name="canvas_save_failed">A stroke could not be saved.</string>
+    <string name="canvas_retry_save">Retry save</string>
+    <string name="canvas_saving">Saving strokes…</string>
+</resources>
